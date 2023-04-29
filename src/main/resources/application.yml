@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo-web
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:h2:file:~/demo
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    platform: h2
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html # ;charset=<encoding> is added
+    cache: true # set to false for hot refresh
